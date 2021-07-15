@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LayoutController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -48,12 +49,13 @@ use Illuminate\Support\Facades\Route;
 //Route::get('/home',[\App\Http\Controllers\Datcontroller::class, 'home'])->name('dathome');
 
 
-
-Route::get('/',function (){
-    return view('welcome');
-});
 Route::get('/data-handle/{id}/path',[\App\Http\Controllers\DataHandleController::class, 'handlePathVariable']);
 Route::get('/data-handle/query-string',[\App\Http\Controllers\DataHandleController::class, 'handleQueryString']);
 Route::get('/data-handle/form',[\App\Http\Controllers\DataHandleController::class, 'returnForm']);
 Route::post('/data-handle/form',[\App\Http\Controllers\DataHandleController::class, 'processForm']);
+
+
+Route::get('',[LayoutController::class,'masterLayout']);
+Route::get('/form',[LayoutController::class,'create']);
+Route::get('/list',[LayoutController::class,'list']);
 

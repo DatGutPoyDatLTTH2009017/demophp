@@ -14,6 +14,9 @@
     <!-- Bootstrap CSS
 		============================================ -->
     <link rel="stylesheet" href="/asset/css/bootstrap.min.css">
+    <!-- datapicker CSS
+       ============================================ -->
+    <link rel="stylesheet" href="/asset/css/datapicker/datepicker3.css">
     <!-- Bootstrap CSS
 		============================================ -->
     <link rel="stylesheet" href="/asset/css/font-awesome.min.css">
@@ -54,6 +57,7 @@
     <!-- modals CSS
 		============================================ -->
     <link rel="stylesheet" href="/asset/css/modals.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <!-- forms CSS
 		============================================ -->
     <link rel="stylesheet" href="/asset/css/form/all-type-forms.css">
@@ -76,4 +80,5 @@
     <!-- modernizr JS
 		============================================ -->
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+
 </head>

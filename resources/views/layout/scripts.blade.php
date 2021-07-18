@@ -30,6 +30,10 @@
     ============================================ -->
 <script src="/asset/js/metisMenu/metisMenu.min.js"></script>
 <script src="/asset/js/metisMenu/metisMenu-active.js"></script>
+<!-- datapicker JS
+		============================================ -->
+<script src="/asset/js/datapicker/bootstrap-datepicker.js"></script>
+<script src="/asset/js/datapicker/datepicker-active.js"></script>
 <!-- data table JS
        ============================================ -->
 <script src="/asset/js/data-table/bootstrap-table.js"></script>

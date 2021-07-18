@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EventController;
 use App\Http\Controllers\LayoutController;
 use Illuminate\Support\Facades\Route;
 
@@ -58,4 +59,15 @@ Route::post('/data-handle/form',[\App\Http\Controllers\DataHandleController::cla
 Route::get('',[LayoutController::class,'masterLayout']);
 Route::get('/form',[LayoutController::class,'create']);
 Route::get('/list',[LayoutController::class,'list']);
+
+
+Route::get('/admin/event/create',[EventController::class, 'create']);
+Route::post('/admin/event/create',[EventController::class, 'store']);
+Route::get('/admin/event/list',[EventController::class, 'list']);
+Route::get('/admin/event/edit/{id}',[EventController::class, 'edit']);
+Route::put('/admin/event/edit/{id}',[EventController::class, 'update']);
+Route::delete('/admin/event/delete/{id}',[EventController::class, 'delete']);
+//CRUD
+
+//bai2
 

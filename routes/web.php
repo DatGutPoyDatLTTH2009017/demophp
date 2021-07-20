@@ -70,4 +70,6 @@ Route::delete('/admin/event/delete/{id}',[EventController::class, 'delete']);
 //CRUD
 
 //bai2
+Route::get('/demo/validate/create',[\App\Http\Controllers\Datcontroller::class,'create']);
+Route::post('/demo/validate/store',[\App\Http\Controllers\Datcontroller::class,'store']);
 

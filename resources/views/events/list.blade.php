@@ -67,6 +67,23 @@
                                 </table>
                             </div>
                         </div>
+                        <div class="row">
+                            @if ($list->lastPage() > 1)
+                                <ul class="pagination">
+                                    <li class="{{ ($list->currentPage() == 1) ? ' disabled' : '' }}">
+                                        <a href="{{ $list->url(1) }}">Previous</a>
+                                    </li>
+                                    @for ($i = 1; $i <= $list->lastPage(); $i++)
+                                        <li class="{{ ($list->currentPage() == $i) ? ' active' : '' }}">
+                                            <a href="{{ $list->url($i) }}">{{ $i }}</a>
+                                        </li>
+                                    @endfor
+                                    <li class="{{ ($list->currentPage() == $list->lastPage()) ? ' disabled' : '' }}">
+                                        <a href="{{ $list->url($list->currentPage()+1) }}" >Next</a>
+                                    </li>
+                                </ul>
+                            @endif
+                        </div>
                     </div>
                 </div>
             </div>

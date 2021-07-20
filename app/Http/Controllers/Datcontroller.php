@@ -30,7 +30,8 @@ class Datcontroller extends Controller
         $user->save();
         return redirect()->route('datindex')->with('Facebook', 'Very Good');
     }
-    public function status(Request $request){
+    public function status(Request $request)
+    {
         $articles = new articlemodel();
         $articles->fill($request->all());
         $articles->user_id = Auth::id();

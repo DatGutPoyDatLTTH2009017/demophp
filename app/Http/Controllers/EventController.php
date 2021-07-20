@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\EventRequest;
 use App\Models\Event;
 use Illuminate\Http\Request;
 
@@ -33,17 +34,10 @@ class EventController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return Event
      */
-    public function store(Request $request)
+    public function store(EventRequest $request)
     {
         $events = new Event();
-//        $events->eventName = $request->get('eventName');
-//        $events->bandNames = $request->get('bandNames');
-//        $events->startDate = $request->get('startDate');
-//        $events->endDate = $request->get('endDate');
-//        $events->portfolio = $request->get('portfolio');
-//        $events->ticketPrice = $request->get('ticketPrice');
-//        $events->status = $request->get('status');
-        $events->fill($request->all());
+        $events->fill($request->validated());
         $events->save();
         return $events;
     }
@@ -76,21 +70,14 @@ class EventController extends Controller
 
     public function list()
     {
-        $events = Event::all();
+        $events = Event::query()->paginate(5);
         return view('events/list', [
             'list' => $events,
         ]);
     }
-    public function save(Request $request, $id){
+    public function save(EventRequest $request, $id){
         $detailEvent = Event::find($id);
-//        $detailEvent->eventName = $request->get('eventName');
-//        $detailEvent->bandNames = $request->get('bandNames');
-//        $detailEvent->startDate = $request->get('startDate');
-//        $detailEvent->endDate = $request->get('endDate');
-//        $detailEvent->portfolio = $request->get('portfolio');
-//        $detailEvent->ticketPrice = $request->get('ticketPrice');
-//        $detailEvent->status = $request->get('status');
-        $detailEvent->update($request->all());
+        $detailEvent->update($request->validated());
         $detailEvent->save();
         return redirect('/admin/event/list');
     }
